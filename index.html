@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ginger Extract | Chemistry Prototype Project 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap');
+        
+        * { transition: all 0.2s ease; }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -2px;
+            left: 0;
+            background-color: #f59e0b;
+        }
+        .nav-link:hover:after { width: 100%; }
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #f59e0b, #10b981);
+            bottom: -8px;
+            left: 0;
+            border-radius: 9999px;
+        }
+        .smooth-scroll { scroll-behavior: smooth; }
+        .hero-ginger { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+        .review-card:hover { transform: translateY(-8px); }
+        .cost-row:hover { background-color: rgba(245, 158, 11, 0.1); }
+    </style>
+</head>
+<body class="smooth-scroll bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-950 text-white font-sans">
+
+    <!-- NAVBAR -->
+    <nav class="bg-slate-950/90 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-emerald-500 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-flask text-slate-950 text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tight">Ginger Extract</h1>
+                    <p class="text-xs text-emerald-400 -mt-1">CHEMISTRY PROTOTYPE PROJECT 2026</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#home" class="nav-link">HOME</a>
+                <a href="#ingredients" class="nav-link">INGREDIENTS</a>
+                <a href="#process" class="nav-link">OUR PROCESS</a>
+                <a href="#flow" class="nav-link">FLOW & QC</a>
+                <a href="#demo" class="nav-link">DEMO</a>
+                <a href="#applications" class="nav-link">APPLICATIONS</a>
+                <a href="#costing" class="nav-link">COSTING & CUSTOMIZATION</a>
+                <a href="#reviews" class="nav-link">REVIEWS</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#reactions" class="nav-link">REACTIONS</a>
+            </div>
+
+            <button onclick="toggleMobileMenu()" class="md:hidden text-3xl">
+                <i id="menu-icon" class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-white/10 px-6 py-8">
+        <div class="flex flex-col gap-6 text-lg">
+            <a href="#home" onclick="toggleMobileMenu()" class="hover:text-amber-400">Home</a>
+            <a href="#ingredients" onclick="toggleMobileMenu()" class="hover:text-amber-400">Ingredients</a>
+            <a href="#process" onclick="toggleMobileMenu()" class="hover:text-amber-400">Our Process</a>
+            <a href="#flow" onclick="toggleMobileMenu()" class="hover:text-amber-400">Flow & QC</a>
+            <a href="#demo" onclick="toggleMobileMenu()" class="hover:text-amber-400">Demo</a>
+            <a href="#applications" onclick="toggleMobileMenu()" class="hover:text-amber-400">Applications</a>
+            <a href="#costing" onclick="toggleMobileMenu()" class="hover:text-amber-400">Costing & Customization</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="hover:text-amber-400">Reviews</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="hover:text-amber-400">FAQ</a>
+            <a href="#reactions" onclick="toggleMobileMenu()" class="hover:text-amber-400">Reactions</a>
+        </div>
+    </div>
+
+    <!-- HOME / FIRST PAGE - Updated with Ginger Image -->
+    <section id="home" class="min-h-screen flex items-center relative">
+        <div class="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-block px-6 py-3 bg-white/10 rounded-3xl text-emerald-400 text-sm font-medium">
+                    CHEMISTRY PROTOTYPE PROJECT 2026
+                </div>
+                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter">
+                    PREPARATION OF<br>
+                    <span class="bg-gradient-to-r from-amber-400 via-orange-400 to-emerald-400 bg-clip-text text-transparent">GINGER EXTRACT</span>
+                </h1>
+                <p class="text-xl text-emerald-200 max-w-lg">
+                    Fresh ginger extract prepared by grating and straining method. 100% natural, chemical-free and rich in bioactive gingerols.
+                </p>
+
+                <!-- Group Members -->
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-8">
+                    <h3 class="text-amber-400 uppercase text-sm tracking-widest mb-6">GROUP MEMBERS</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center font-bold text-xl">SS</div>
+                            <div>
+                                <p class="font-semibold">Sonal Singh</p>
+                                <p class="text-sm text-emerald-300">202401040374</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-emerald-400 text-slate-950 rounded-2xl flex items-center justify-center font-bold text-xl">RV</div>
+                            <div>
+                                <p class="font-semibold">Rutuja Bankar</p>
+                                <p class="text-sm text-emerald-300">202401040377</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-sky-400 text-slate-950 rounded-2xl flex items-center justify-center font-bold text-xl">PK</div>
+                            <div>
+                                <p class="font-semibold">Pratiksha Sawant</p>
+                                <p class="text-sm text-emerald-300">202401040351</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#process" class="inline-flex items-center bg-gradient-to-r from-amber-400 to-emerald-500 text-slate-950 font-semibold px-10 py-5 rounded-3xl text-lg hover:scale-105">
+                    View Our Process
+                    <i class="fa-solid fa-arrow-right ml-3"></i>
+                </a>
+            </div>
+
+            <!-- Updated Hero Visual with Ginger -->
+            <div class="flex justify-center">
+                <div class="w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-amber-400/30 to-emerald-500/30 rounded-[4rem] flex items-center justify-center hero-ginger relative">
+                    <!-- Ginger Root Image -->
+                    <div class="text-[180px] drop-shadow-2xl">🫚</div>
+                    <!-- Ginger label overlay -->
+                    <div class="absolute -top-6 -right-6 bg-white text-slate-950 text-sm font-bold px-6 py-2 rounded-3xl flex items-center shadow-2xl">
+                        <i class="fa-solid fa-leaf mr-2 text-emerald-500"></i>
+                        FRESH GINGER
+                    </div>
+                    <div class="absolute bottom-8 left-8 bg-emerald-900/90 text-white text-xs px-5 py-2 rounded-2xl flex items-center backdrop-blur-md">
+                        <span class="text-emerald-400 font-mono">2026</span>
+                        <span class="mx-3">•</span>
+                        NATURAL EXTRACT
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INGREDIENTS -->
+    <section id="ingredients" class="py-24 bg-white/5">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-6 py-2 bg-amber-400 text-slate-950 font-semibold rounded-3xl text-sm">PAGE 2</span>
+                <h2 class="section-header text-5xl font-bold mt-4">INGREDIENTS USED</h2>
+            </div>
+            <div class="max-w-2xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="bg-white/10 rounded-3xl p-10 text-center">
+                    <div class="text-6xl mb-6">🪴</div>
+                    <h3 class="text-2xl font-semibold">Fresh Ginger Rhizomes</h3>
+                    <p class="mt-3 text-emerald-300">50–100 g fresh, firm ginger</p>
+                </div>
+                <div class="bg-white/10 rounded-3xl p-10 text-center">
+                    <div class="text-6xl mb-6">💧</div>
+                    <h3 class="text-2xl font-semibold">Clean Water</h3>
+                    <p class="mt-3 text-emerald-300">For washing only</p>
+                </div>
+            </div>
+            <p class="text-center text-emerald-400 mt-12 text-sm">100% natural mechanical extraction – No solvents or chemicals used.</p>
+        </div>
+    </section>
+
+    <!-- OUR PROCESS -->
+    <section id="process" class="py-24">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-6 py-2 bg-emerald-400 text-slate-950 font-semibold rounded-3xl text-sm">PAGE 3</span>
+                <h2 class="section-header text-5xl font-bold mt-4">OUR STEP-BY-STEP PROCESS</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="bg-white/10 rounded-3xl p-8 md:p-10 flex gap-8 items-start">
+                    <div class="w-12 h-12 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center font-bold text-2xl flex-shrink-0">01</div>
+                    <div>
+                        <h4 class="text-2xl font-semibold">Washing</h4>
+                        <p class="mt-3 text-emerald-200">Fresh ginger rhizomes were washed thoroughly under running water to remove soil and impurities.</p>
+                    </div>
+                </div>
+                <div class="bg-white/10 rounded-3xl p-8 md:p-10 flex gap-8 items-start">
+                    <div class="w-12 h-12 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center font-bold text-2xl flex-shrink-0">02</div>
+                    <div>
+                        <h4 class="text-2xl font-semibold">Grating</h4>
+                        <p class="mt-3 text-emerald-200">Cleaned ginger was finely grated to break the cells and release the juice rich in gingerols.</p>
+                    </div>
+                </div>
+                <div class="bg-white/10 rounded-3xl p-8 md:p-10 flex gap-8 items-start">
+                    <div class="w-12 h-12 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center font-bold text-2xl flex-shrink-0">03</div>
+                    <div>
+                        <h4 class="text-2xl font-semibold">Straining & Squeezing</h4>
+                        <p class="mt-3 text-emerald-200">Grated pulp was placed in muslin cloth and firmly squeezed to extract the juice. The fibrous residue was discarded.</p>
+                    </div>
+                </div>
+                <div class="bg-white/10 rounded-3xl p-8 md:p-10 flex gap-8 items-start border-2 border-amber-400">
+                    <div class="w-12 h-12 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center font-bold text-2xl flex-shrink-0">✅</div>
+                    <div>
+                        <h4 class="text-2xl font-semibold text-amber-400">Fresh Ginger Extract Collected</h4>
+                        <p class="mt-3 text-emerald-200">The strained liquid (ginger juice/extract) was collected in a clean container.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOW & QC -->
+    <section id="flow" class="py-24 bg-slate-950">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <span class="px-6 py-2 bg-white/10 rounded-3xl text-sm font-semibold">PAGE 4</span>
+                    <h2 class="section-header text-5xl font-bold mt-4">PROCESS FLOW DIAGRAM</h2>
+                    <div class="mt-12 bg-white/10 rounded-3xl p-12">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center">
+                            <div class="flex-1 bg-emerald-900/70 rounded-2xl p-6">Fresh Ginger</div>
+                            <div class="text-4xl text-amber-400">→</div>
+                            <div class="flex-1 bg-emerald-900/70 rounded-2xl p-6">Wash</div>
+                            <div class="text-4xl text-amber-400">→</div>
+                            <div class="flex-1 bg-emerald-900/70 rounded-2xl p-6">Grate</div>
+                            <div class="text-4xl text-amber-400">→</div>
+                            <div class="flex-1 bg-emerald-900/70 rounded-2xl p-6">Strain & Squeeze</div>
+                            <div class="text-4xl text-amber-400">→</div>
+                            <div class="flex-1 bg-amber-400 text-slate-950 rounded-2xl p-6 font-semibold">Ginger Extract</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="bg-white/10 rounded-3xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3"><i class="fa-solid fa-shield-halved text-emerald-400"></i>QUALITY CONTROL</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex justify-between"><span>Appearance</span><span class="text-emerald-400">Cloudy yellowish liquid</span></li>
+                            <li class="flex justify-between"><span>Odour</span><span class="text-emerald-400">Strong ginger aroma</span></li>
+                            <li class="flex justify-between"><span>Taste</span><span class="text-emerald-400">Pungent & spicy</span></li>
+                            <li class="flex justify-between"><span>pH</span><span class="text-emerald-400">4.5 – 5.5</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/10 rounded-3xl p-8">
+                        <h3 class="text-2xl font-semibold mb-4">STORAGE</h3>
+                        <p class="text-emerald-200">Refrigerate immediately. Best used within 3–5 days. Can be frozen for longer storage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEMO -->
+    <section id="demo" class="py-24 bg-white/5">
+        <div class="max-w-screen-2xl mx-auto px-6 text-center">
+            <span class="px-6 py-2 bg-amber-400 text-slate-950 font-semibold rounded-3xl text-sm">PAGE 5</span>
+            <h2 class="section-header text-5xl font-bold mt-4">DEMONSTRATION</h2>
+            <div class="max-w-4xl mx-auto mt-12 bg-black rounded-3xl overflow-hidden">
+                <iframe class="w-full aspect-video" src="c:\Users\prite\Downloads\ChemVideo.mp4" title="Ginger Extract Demo" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPLICATIONS -->
+    <section id="applications" class="py-24">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <h2 class="text-center text-5xl font-bold mb-16">Applications</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/10 p-8 rounded-3xl">Digestive health & nausea relief</div>
+                <div class="bg-white/10 p-8 rounded-3xl">Natural anti-inflammatory support</div>
+                <div class="bg-white/10 p-8 rounded-3xl">Flavoring in teas, juices & recipes</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIAL COSTING & CUSTOMIZATION -->
+    <section id="costing" class="py-24 bg-slate-950">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-6 py-2 bg-emerald-400 text-slate-950 font-semibold rounded-3xl text-sm">PAGE 6 • INDUSTRIAL SCALE</span>
+                <h2 class="section-header text-5xl font-bold mt-4">INDUSTRIAL COSTING & CUSTOMIZATION</h2>
+                <p class="mt-4 text-emerald-200 max-w-2xl mx-auto">Accurate costing based on April 2026 Maharashtra market rates using mechanical grating & straining method.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-10 mb-16">
+                    <h3 class="text-3xl font-semibold mb-8 flex items-center gap-3">
+                        <i class="fa-solid fa-calculator text-amber-400"></i>
+                        Cost Estimation (2026 Rates)
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="border-b border-white/20">
+                                    <th class="pb-6 font-medium text-emerald-300">Order Quantity</th>
+                                    <th class="pb-6 font-medium text-emerald-300">Ginger Required</th>
+                                    <th class="pb-6 font-medium text-emerald-300">Raw Material</th>
+                                    <th class="pb-6 font-medium text-emerald-300">Processing + Labour</th>
+                                    <th class="pb-6 font-medium text-emerald-300">Packaging</th>
+                                    <th class="pb-6 font-medium text-emerald-300">Total Cost (₹)</th>
+                                    <th class="pb-6 font-medium text-emerald-300">Cost per Liter (₹)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr class="cost-row border-b border-white/10">
+                                    <td class="py-6">100 Liters</td>
+                                    <td class="py-6">220 kg</td>
+                                    <td class="py-6">₹8,800</td>
+                                    <td class="py-6">₹12,000</td>
+                                    <td class="py-6">₹9,500</td>
+                                    <td class="py-6 font-semibold text-emerald-400">₹30,300</td>
+                                    <td class="py-6 font-semibold">₹303 / L</td>
+                                </tr>
+                                <tr class="cost-row border-b border-white/10">
+                                    <td class="py-6">500 Liters</td>
+                                    <td class="py-6">1,100 kg</td>
+                                    <td class="py-6">₹44,000</td>
+                                    <td class="py-6">₹45,000</td>
+                                    <td class="py-6">₹38,000</td>
+                                    <td class="py-6 font-semibold text-emerald-400">₹1,27,000</td>
+                                    <td class="py-6 font-semibold">₹254 / L</td>
+                                </tr>
+                                <tr class="cost-row border-b border-white/10">
+                                    <td class="py-6">1,000 Liters</td>
+                                    <td class="py-6">2,200 kg</td>
+                                    <td class="py-6">₹88,000</td>
+                                    <td class="py-6">₹75,000</td>
+                                    <td class="py-6">₹65,000</td>
+                                    <td class="py-6 font-semibold text-emerald-400">₹2,28,000</td>
+                                    <td class="py-6 font-semibold">₹228 / L</td>
+                                </tr>
+                                <tr class="cost-row">
+                                    <td class="py-6">5,000 Liters (Bulk)</td>
+                                    <td class="py-6">11,000 kg</td>
+                                    <td class="py-6">₹4,40,000</td>
+                                    <td class="py-6">₹2,80,000</td>
+                                    <td class="py-6">₹2,50,000</td>
+                                    <td class="py-6 font-semibold text-emerald-400">₹9,70,000</td>
+                                    <td class="py-6 font-semibold">₹194 / L</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-emerald-300 mt-6">* Ginger @ ₹40/kg • Juice yield ≈ 45% • Prices exclude 18% GST and transportation.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="bg-white/10 rounded-3xl p-10">
+                        <h4 class="text-2xl font-semibold mb-6">Cost Components Explained</h4>
+                        <ul class="space-y-6 text-sm">
+                            <li class="flex justify-between"><span class="text-emerald-200">Raw Ginger</span><span>₹40 / kg</span></li>
+                            <li class="flex justify-between"><span class="text-emerald-200">Labour & Processing</span><span>₹40–60 / L</span></li>
+                            <li class="flex justify-between"><span class="text-emerald-200">Utilities</span><span>₹8–12 / L</span></li>
+                            <li class="flex justify-between"><span class="text-emerald-200">Packaging (500 ml bottle)</span><span>₹12–18 per bottle</span></li>
+                            <li class="flex justify-between"><span class="text-emerald-200">Quality Testing</span><span>₹5–8 / L</span></li>
+                            <li class="flex justify-between border-t border-white/20 pt-4 font-semibold"><span>Typical Selling Price</span><span class="text-amber-400">₹350 – ₹550 / L</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/10 rounded-3xl p-10">
+                        <h4 class="text-2xl font-semibold mb-6">Customization Options</h4>
+                        <div class="space-y-8 text-sm">
+                            <div>
+                                <p class="font-medium mb-3">Packaging Type</p>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="bg-white/5 p-4 rounded-2xl">500 ml PET Bottle (+₹15/L)</div>
+                                    <div class="bg-white/5 p-4 rounded-2xl">500 ml Glass Bottle (+₹35/L)</div>
+                                    <div class="bg-white/5 p-4 rounded-2xl">1 L Pouch (+₹8/L)</div>
+                                    <div class="bg-white/5 p-4 rounded-2xl">20 L Drum (–₹40/L)</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-medium mb-3">Concentration & Additives</p>
+                                <ul class="space-y-2 text-emerald-200">
+                                    <li>• Standard strength</li>
+                                    <li>• Double concentrated (+₹80/L)</li>
+                                    <li>• With lemon/honey (+₹45/L)</li>
+                                    <li>• Preservative-free</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="font-medium mb-3">Branding</p>
+                                <p class="text-emerald-200">Private labeling with your logo & design: +₹10–25 per bottle</p>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <p class="text-xs uppercase tracking-widest text-emerald-400">Minimum Order Quantity (MOQ): 50 Liters</p>
+                            <p class="text-xs text-emerald-300 mt-1">Orders above 1000 L get 8–15% volume discount</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-16">
+                    <button onclick="alert('Thank you! Our team will contact you shortly for a personalized quote based on your exact requirements.')" 
+                            class="inline-flex items-center bg-gradient-to-r from-amber-400 to-emerald-500 text-slate-950 font-semibold px-12 py-6 rounded-3xl text-lg hover:scale-105">
+                        <i class="fa-solid fa-envelope mr-3"></i>
+                        GET CUSTOM QUOTE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="py-24 bg-white/5">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-6 py-2 bg-amber-400 text-slate-950 font-semibold rounded-3xl text-sm">PAGE 7</span>
+                <h2 class="section-header text-5xl font-bold mt-4">WHAT OUR CUSTOMERS SAY</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="review-card bg-white/10 backdrop-blur-xl rounded-3xl p-8">
+                    <div class="flex gap-1 text-amber-400 mb-6">★★★★☆</div>
+                    <p class="italic text-emerald-200">"Very fresh and potent ginger extract. We use it daily in our wellness teas. Excellent quality!"</p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-10 h-10 bg-orange-400 rounded-2xl"></div>
+                        <div>
+                            <p class="font-semibold">Rahul Sharma</p>
+                            <p class="text-xs text-emerald-300">Herbal Tea Brand Owner • Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card bg-white/10 backdrop-blur-xl rounded-3xl p-8">
+                    <div class="flex gap-1 text-amber-400 mb-6">★★★★★</div>
+                    <p class="italic text-emerald-200">"We ordered 500 L with custom labeling. Product consistency is great and delivery was on time."</p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-10 h-10 bg-emerald-400 rounded-2xl"></div>
+                        <div>
+                            <p class="font-semibold">Neha Patel</p>
+                            <p class="text-xs text-emerald-300">Ayurvedic Company • Ahmedabad</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card bg-white/10 backdrop-blur-xl rounded-3xl p-8">
+                    <div class="flex gap-1 text-amber-400 mb-6">★★★★☆</div>
+                    <p class="italic text-emerald-200">"Best natural ginger extract we've used. The cold process really preserves the fresh flavour."</p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-10 h-10 bg-sky-400 rounded-2xl"></div>
+                        <div>
+                            <p class="font-semibold">Vikram Rao</p>
+                            <p class="text-xs text-emerald-300">Cold Press Juice Startup • Bangalore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-slate-950">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <h2 class="text-center text-5xl font-bold mb-12">Frequently Asked Questions</h2>
+            <div class="max-w-2xl mx-auto space-y-6">
+                <details class="bg-white/10 rounded-3xl p-6">
+                    <summary class="font-medium cursor-pointer">How long does the fresh extract last?</summary>
+                    <p class="mt-4 text-emerald-200">3–5 days in refrigerator. Can be frozen for up to 3 months.</p>
+                </details>
+                <details class="bg-white/10 rounded-3xl p-6">
+                    <summary class="font-medium cursor-pointer">Do you offer bulk and custom orders?</summary>
+                    <p class="mt-4 text-emerald-200">Yes, we can supply according to your required quantity, packaging, and branding needs.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEY REACTIONS -->
+    <section id="reactions" class="py-24">
+        <div class="max-w-screen-2xl mx-auto px-6">
+            <h2 class="text-center text-5xl font-bold mb-12">Key Chemical Aspect</h2>
+            <div class="max-w-3xl mx-auto bg-white/10 rounded-3xl p-12 text-center">
+                <p class="text-xl">Our cold grating & straining method preserves higher amounts of <strong>6-Gingerol</strong>, the main bioactive compound, with minimal conversion to 6-shogaol.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-10 text-center text-xs text-emerald-400">
+        Ginger Extract Prototype Project 2026 • Sonal Singh • Rutuja Bankar • Pratiksha Sawant • Pune, Maharashtra
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+    </script>
+</body>
+</html>
